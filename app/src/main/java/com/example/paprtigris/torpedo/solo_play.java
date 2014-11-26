@@ -7,33 +7,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Canvas;
 
 
 
+
 public class solo_play extends ActionBarActivity {
 
-    DrawView drawView;
+    drawView drawView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_solo_play);
+        TableLayout TL = (TableLayout) findViewById(R.id.tabla);
 
-          /* View.OnClickListener OCL = new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast T = new Toast(getApplicationContext());
-                    T.setText("nyomtad");
 
-                    T.show();
-                }
-            };*/
-
-        drawView = new DrawView(this);
+        drawView = new drawView(this);
         drawView.setBackgroundColor(Color.WHITE);
         setContentView(drawView);
 
