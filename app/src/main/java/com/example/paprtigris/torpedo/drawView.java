@@ -7,6 +7,7 @@ import android.view.View;
 import android.graphics.Paint;
 import android.graphics.Canvas;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 
 /**
  * Created by Papír Tigris on 2014.11.26..
@@ -30,16 +31,18 @@ public class drawView extends View {
     @Override
     public void onDraw(Canvas canvas)
     {
-        RelativeLayout RL = (RelativeLayout) findViewById(R.id.soloRelative);
-        int keret = 10;
+
+        int keret = 20;
         int width = canvas.getWidth()-keret;
-        int height = canvas.getHeight()- RL.getHeight()-keret;
+        int height = canvas.getHeight()-keret-120;
         int sor = 10;
         int oszlop =10;
+        sor++;
+        oszlop++;
+        if (width < height){height = width;}else {width = height;}
 
-
-        for(int i = keret; i < width;i+= (int) (width/oszlop)) {
-            for (int j = keret; j < height; j += (int) (height / sor)) {
+        for(float i = keret; i < width;i+=  (width/oszlop)) {
+            for (float j = keret; j < height; j +=  (height / sor)) {
                 //Start x, y , Final x, y
 
                 canvas.drawLine(keret, j, width, j , paint);
