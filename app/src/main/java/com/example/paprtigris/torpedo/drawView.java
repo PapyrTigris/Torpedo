@@ -41,12 +41,12 @@ public class drawView extends View {
         oszlop++;
         if (width < height){height = width;}else {width = height;}
 
-        for(float i = keret; i < width;i+=  (width/oszlop)) {
-            for (float j = keret; j < height; j +=  (height / sor)) {
+        for(double i = keret; i < width;i+=  (width/oszlop)) {
+            for (double j = keret; j < height; j +=  (height / sor)) {
                 //Start x, y , Final x, y
 
-                canvas.drawLine(keret, j, width, j , paint);
-                canvas.drawLine(i, keret, i,height , paint);
+                canvas.drawLine(keret, (float)j, width,(float) j , paint);
+                canvas.drawLine((float)i, keret, (float)i,height , paint);
 
             }
         }
