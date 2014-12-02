@@ -1,4 +1,4 @@
-package com.example.paprtigris.torpedo;
+package hu.uniobuda.nik.torpedo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

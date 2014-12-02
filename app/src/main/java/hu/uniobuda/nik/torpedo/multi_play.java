@@ -1,4 +1,4 @@
-package com.example.paprtigris.torpedo;
+package hu.uniobuda.nik.torpedo;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ public class multi_play extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_play);
+
     }
 
 

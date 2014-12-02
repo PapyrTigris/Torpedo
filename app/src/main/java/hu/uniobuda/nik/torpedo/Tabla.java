@@ -1,11 +1,9 @@
-package com.example.paprtigris.torpedo;
+package hu.uniobuda.nik.torpedo;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 
 /**
  * Created by Papír Tigris on 2014.10.03..

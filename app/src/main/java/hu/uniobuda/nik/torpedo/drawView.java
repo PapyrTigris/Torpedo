@@ -1,4 +1,4 @@
-package com.example.paprtigris.torpedo;
+package hu.uniobuda.nik.torpedo;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -6,8 +6,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.graphics.Paint;
 import android.graphics.Canvas;
-import android.widget.RelativeLayout;
+import android.widget.Button;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 
 /**
  * Created by Papír Tigris on 2014.11.26..
@@ -32,11 +33,14 @@ public class drawView extends View {
     public void onDraw(Canvas canvas)
     {
 
+        int sor = 10;
+        int oszlop =10;
+
+/*
         int keret = 20;
         int width = canvas.getWidth()-keret;
         int height = canvas.getHeight()-keret-120;
-        int sor = 10;
-        int oszlop =10;
+
         sor++;
         oszlop++;
         if (width < height){height = width;}else {width = height;}
@@ -49,6 +53,21 @@ public class drawView extends View {
                 canvas.drawLine((float)i, keret, (float)i,height , paint);
 
             }
-        }
+        }*/
+        TableLayout TL = new TableLayout(getContext());
+         for (int i = 0;i<sor;i++)
+            {
+                TL.addView(new TableRow(getContext()));
+                for (int j = 0;j<oszlop;j++)
+                {
+                    Button B = new Button(getContext());
+                    B.setId(i+j);
+                    TL.addView(B);
+                }
+            }
+
+
+
+
     }
 }

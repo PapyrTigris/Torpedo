@@ -6,9 +6,14 @@
 
   */
 public class Tabla_adatok {
+
     int sor = 10;
     int oszlop = 10;
+
     char [][]table;
+
+    char irany;
+
 
     public Tabla_adatok(int sor, int oszlop) {
         this.sor = sor;
@@ -22,6 +27,7 @@ public class Tabla_adatok {
     //
     private void init()
     {
+        irany= ' ';
       table  = new char[sor] [oszlop];
         for(int i=0;i<sor;i++)
         {
@@ -40,28 +46,29 @@ public class Tabla_adatok {
         table[x][y] = 'O';
     }
 
+
     public  void Sullyedt(int x, int y)
     {
-       char irany= ' ';
 
-         if (Loves(x,y)) {
 
-             if (!Loves(x++, y)) {
+         if (Loves_talalt(x, y)) {
+
+             if (!Loves_talalt(x++, y)) {
                  table[x++][y] = 'X';
-                 irany = 'j';
+                 if (irany==' ')  irany = 'j';
 
              }
-             if (!Loves(x, y++)) {
+             if (!Loves_talalt(x, y++)) {
                  table[x][y++] = 'X';
-                 irany = 'l';
+               if (irany==' ')  irany = 'l';
              }
-             if (!Loves(x, y--)) {
+             if (!Loves_talalt(x, y--)) {
                  table[x][y--] = 'X';
-                 irany = 'f';
+                 if (irany==' ') irany = 'f';
              }
-             if (!Loves(x--, y)) {
+             if (!Loves_talalt(x--, y)) {
                  table[x--][y] = 'X';
-                 irany = 'b';
+                 if (irany==' ') irany = 'b';
              }
          }
         switch (irany)
@@ -72,7 +79,7 @@ public class Tabla_adatok {
             case 'b'  : Sullyedt(x--,y); break;
         }
     }
-    private boolean Loves(int x, int y)
+    private boolean Loves_talalt(int x, int y)
     {
         if (table[x][y] == 'O') return  true;
         else return false;

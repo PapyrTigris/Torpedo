@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.paprtigris.torpedo" >
+    package="hu.uniobuda.nik.torpedo" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Solo_Multy_Activity"
+            android:name="hu.uniobuda.nik.torpedo.Solo_Multy_Activity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,11 +17,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".solo_play"
+            android:name="hu.uniobuda.nik.torpedo.solo_play"
             android:label="@string/title_activity_solo_play" >
         </activity>
         <activity
-            android:name=".multi_play"
+            android:name="hu.uniobuda.nik.torpedo.multi_play"
             android:label="@string/title_activity_multi_play" >
         </activity>
     </application>

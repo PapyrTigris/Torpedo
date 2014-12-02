@@ -1,20 +1,11 @@
-package com.example.paprtigris.torpedo;
+package hu.uniobuda.nik.torpedo;
 
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TableLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.graphics.Canvas;
-
-
 
 
 public class solo_play extends ActionBarActivity {
