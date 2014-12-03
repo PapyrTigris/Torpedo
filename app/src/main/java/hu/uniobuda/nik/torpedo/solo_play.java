@@ -5,12 +5,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.Button;
 
 
 public class solo_play extends ActionBarActivity {
-
-    drawView drawView;
 
 
     @Override
@@ -18,12 +20,11 @@ public class solo_play extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_solo_play);
-        TableLayout TL = (TableLayout) findViewById(R.id.tabla);
 
-
-        drawView = new drawView(this);
-        drawView.setBackgroundColor(Color.WHITE);
-        setContentView(drawView);
+        GridView GV = (GridView) findViewById(R.id.soloGrid);
+        Button B = new Button(this);
+        B.setText("Van gombom");
+        GV.addView(B);
 
     }
 

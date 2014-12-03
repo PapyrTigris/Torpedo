@@ -1,6 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/soloRelative"
+    android:id="@+id/soloGrid"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -10,15 +10,4 @@
     tools:context="hu.uniobuda.nik.torpedo.solo_play">
 
 
-<TableLayout
-       android:id="@+id/tabla"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:background="#000000"
-       >
-
-
-
-   </TableLayout>
-
-</RelativeLayout>
+</GridView>
