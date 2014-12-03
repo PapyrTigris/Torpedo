@@ -49,6 +49,7 @@ public class Tabla_adatok {
 
     public  void Sullyedt(int x, int y)
     {
+        //lekezelni a széleket
 
 
          if (Loves_talalt(x, y)) {

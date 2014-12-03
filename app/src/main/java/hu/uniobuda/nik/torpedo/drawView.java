@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 /**
  * Created by Papír Tigris on 2014.11.26..
@@ -54,6 +55,9 @@ public class drawView extends View {
 
             }
         }*/
+        TextView TX = new TextView(getContext().getApplicationContext());
+        TX.setText("42");
+
         TableLayout TL = new TableLayout(getContext());
          for (int i = 0;i<sor;i++)
             {
