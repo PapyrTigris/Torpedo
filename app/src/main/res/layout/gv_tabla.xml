@@ -4,10 +4,11 @@
     android:id="@+id/gv_tabla"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:numColumns="auto_fit"
+    android:numColumns="10"
     android:horizontalSpacing="10dp"
     android:verticalSpacing="10dp"
     android:gravity="center"
-    android:stretchMode="columnWidth" >
+    android:background="#9090D0"
+    >
 
 </GridView>
