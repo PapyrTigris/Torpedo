@@ -7,5 +7,6 @@
     <string name="title_activity_solo">Solo</string>
     <string name="title_activity_solo_play">solo_play</string>
     <string name="title_activity_multi_play">multi_play</string>
+    <string name="title_activity_tabla">Tabla</string>
 
 </resources>

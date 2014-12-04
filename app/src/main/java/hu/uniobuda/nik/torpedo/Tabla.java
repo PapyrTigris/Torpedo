@@ -1,44 +1,52 @@
 package hu.uniobuda.nik.torpedo;
 
 import android.content.Context;
-import android.util.AttributeSet;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.TableLayout;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
 
-/**
- * Created by Papír Tigris on 2014.10.03..
- */
-public class Tabla extends View {
-private char[][] tabla;
-private int Sor = 10;
-private int Oszlop = 10;
-private TableLayout TL;
 
-    public Tabla(Context context) {
-        super(context);
-    }
+public class Tabla extends BaseAdapter {
 
-    public Tabla(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
+    Context mContext;
+    public Integer[] alapkockák;
 
-    public Tabla(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-    private void init()
-    {
-        for (int i = 0 ;i < Sor;i++)
+    public Tabla(Context mContext) {
+        this.mContext = mContext;
+
+        for (int i = 0;i<Solo_Multy_Activity.sor*Solo_Multy_Activity.oszlop;i++)
         {
-            for(int j=0;j<Oszlop;j++)
-            {
-                tabla[i][j] = ' ';
-            }
+            alapkockák[i]=R.drawable.alap;
         }
     }
 
-    public  void onDraw()
-    {
+    @Override
+    public int getCount() {
+        return alapkockák.length;
+    }
 
+    @Override
+    public Object getItem(int i) {
+        return alapkockák[i];
+    }
 
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        ImageView imageView = new ImageView(mContext);
+        imageView.setImageResource(alapkockák[i]);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setLayoutParams(new GridView.LayoutParams(70, 70));
+        return imageView;
     }
 }

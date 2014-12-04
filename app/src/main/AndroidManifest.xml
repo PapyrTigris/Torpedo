@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="hu.uniobuda.nik.torpedo.Solo_Multy_Activity"
+            android:name=".Solo_Multy_Activity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="hu.uniobuda.nik.torpedo.solo_play"
+            android:name=".solo_play"
             android:label="@string/title_activity_solo_play" >
         </activity>
         <activity
-            android:name="hu.uniobuda.nik.torpedo.multi_play"
+            android:name=".multi_play"
             android:label="@string/title_activity_multi_play" >
+        </activity>
+        <activity
+            android:name=".Tabla"
+            android:label="@string/title_activity_tabla" >
         </activity>
     </application>
 

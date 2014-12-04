@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
+
 
 
 public class multi_play extends ActionBarActivity {
@@ -12,6 +14,10 @@ public class multi_play extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_play);
+
+        GridView GV = (GridView) findViewById(R.id.multiGrid);
+        GV.setNumColumns(Solo_Multy_Activity.oszlop);
+        GV.setAdapter(new Tabla(this));
 
     }
 
@@ -28,6 +34,7 @@ public class multi_play extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;

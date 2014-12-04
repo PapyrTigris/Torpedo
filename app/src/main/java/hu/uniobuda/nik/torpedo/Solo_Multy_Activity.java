@@ -10,6 +10,8 @@ import android.widget.Button;
 
 
 public class Solo_Multy_Activity extends ActionBarActivity {
+    static int sor = 10;
+    static int oszlop = 10;
 Button Solo;
 Button Multi;
 
