@@ -15,25 +15,26 @@ import android.widget.ImageView;
 public class Tabla extends BaseAdapter {
 
     Context mContext;
-    public Integer[] alapkockák;
+    public Integer[] alapkockak;
+    int db;
 
     public Tabla(Context mContext) {
         this.mContext = mContext;
-
-        for (int i = 0;i<Solo_Multy_Activity.sor*Solo_Multy_Activity.oszlop;i++)
-        {
-            alapkockák[i]=R.drawable.alap;
+        db = Solo_Multy_Activity.sor * Solo_Multy_Activity.oszlop;
+        alapkockak = new Integer[db];
+        for (int i = 0; i < db; i++) {
+            alapkockak[i] = R.drawable.alap;
         }
     }
 
     @Override
     public int getCount() {
-        return alapkockák.length;
+        return alapkockak.length;
     }
 
     @Override
     public Object getItem(int i) {
-        return alapkockák[i];
+        return alapkockak[i];
     }
 
     @Override
@@ -44,7 +45,7 @@ public class Tabla extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ImageView imageView = new ImageView(mContext);
-        imageView.setImageResource(alapkockák[i]);
+        imageView.setImageResource(alapkockak[i]);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new GridView.LayoutParams(70, 70));
         return imageView;

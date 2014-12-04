@@ -12,8 +12,8 @@ import android.widget.Button;
 public class Solo_Multy_Activity extends ActionBarActivity {
     static int sor = 10;
     static int oszlop = 10;
-Button Solo;
-Button Multi;
+    Button Solo;
+    Button Multi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +30,17 @@ Button Multi;
             public void onClick(View view) {
                 //solo Activity behozása
                 startActivity(new Intent(getApplicationContext(), solo_play.class));
-    }
-});
+            }
+        });
 
-      Multi.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              //Multi elindítása
-              startActivity(new Intent(getApplicationContext(), multi_play.class));
-          }
-      });
-   }
+        Multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Multi elindítása
+                startActivity(new Intent(getApplicationContext(), multi_play.class));
+            }
+        });
+    }
 
 
     @Override

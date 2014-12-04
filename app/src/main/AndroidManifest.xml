@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hu.uniobuda.nik.torpedo" >
+    package="hu.uniobuda.nik.torpedo">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".Solo_Multy_Activity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,16 +18,13 @@
         </activity>
         <activity
             android:name=".solo_play"
-            android:label="@string/title_activity_solo_play" >
-        </activity>
+            android:label="@string/title_activity_solo_play"></activity>
         <activity
             android:name=".multi_play"
-            android:label="@string/title_activity_multi_play" >
-        </activity>
+            android:label="@string/title_activity_multi_play"></activity>
         <activity
             android:name=".Tabla"
-            android:label="@string/title_activity_tabla" >
-        </activity>
+            android:label="@string/title_activity_tabla"></activity>
     </application>
 
 </manifest>

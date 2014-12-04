@@ -10,18 +10,16 @@ import android.widget.GridView;
 public class solo_play extends ActionBarActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_solo_play);
+        setContentView(R.layout.gv_tabla);
 
-        GridView GV = (GridView) findViewById(R.id.soloGrid);
-        GV.setColumnWidth(GV.getWidth()/Solo_Multy_Activity.oszlop);
+        GridView GV = (GridView) findViewById(R.id.gv_tabla);
+       // GV.setColumnWidth(GV.getWidth() / Solo_Multy_Activity.oszlop);
         GV.setAdapter(new Tabla(this));
 
     }
-
 
 
     @Override

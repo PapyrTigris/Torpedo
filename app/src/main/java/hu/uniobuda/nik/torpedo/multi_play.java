@@ -7,16 +7,14 @@ import android.view.MenuItem;
 import android.widget.GridView;
 
 
-
 public class multi_play extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multi_play);
+        setContentView(R.layout.gv_tabla);
 
-        GridView GV = (GridView) findViewById(R.id.multiGrid);
-        GV.setNumColumns(Solo_Multy_Activity.oszlop);
+        GridView GV = (GridView) findViewById(R.id.gv_tabla);
         GV.setAdapter(new Tabla(this));
 
     }

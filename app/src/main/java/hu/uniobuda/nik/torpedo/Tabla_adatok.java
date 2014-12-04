@@ -49,7 +49,7 @@ public class Tabla_adatok {
     public void Sullyedt(int x, int y) {
         //lekezelni a széleket
 
-
+       // irányt is a konstruktorba
         if (Loves_talalt(x, y)) {
 
             if (!Loves_talalt(x++, y)) {
@@ -84,6 +84,7 @@ public class Tabla_adatok {
                 Sullyedt(x--, y);
                 break;
         }
+        //Vissza is meg kell csinálni mert lehet h a közepénél süllyeztettek
     }
 
     private boolean Loves_talalt(int x, int y) {

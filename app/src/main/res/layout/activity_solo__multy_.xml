@@ -13,15 +13,13 @@
         android:id="@+id/solo"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:text="Solo Play"
-        />
+        android:text="Solo Play" />
 
     <Button
         android:layout_below="@+id/solo"
         android:id="@+id/multi"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:text="Multiplayer"
-        />
+        android:text="Multiplayer" />
 
 </RelativeLayout>
