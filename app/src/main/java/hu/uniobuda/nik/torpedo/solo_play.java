@@ -1,30 +1,24 @@
 package hu.uniobuda.nik.torpedo;
 
-import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.Button;
 
 
 public class solo_play extends ActionBarActivity {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_solo_play);
 
         GridView GV = (GridView) findViewById(R.id.soloGrid);
-        Button B = new Button(this);
-        B.setText("Van gombom");
-        GV.addView(B);
+        GV.setColumnWidth(GV.getWidth()/Solo_Multy_Activity.oszlop);
+        GV.setAdapter(new Tabla(this));
 
     }
 
