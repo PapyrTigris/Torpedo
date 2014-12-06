@@ -12,7 +12,11 @@ public class Hajok {
 
 
     public Hajok() {
+        //A hajók száma legyen mondjuk 5
+        hajok = new Hajo[5];
+        R = new Random();
         HajoLetrehoz(5);
+        HajoLetrehoz(3);
         HajoLetrehoz(3);
         HajoLetrehoz(2);
         HajoLetrehoz(2);
@@ -34,8 +38,12 @@ public class Hajok {
     public boolean Hajoe(int x,int y)
     {
         boolean hajo =false;
+        //debugoz
+        int z = hajok.length;
         for (int i= 0;i<hajok.length;i++)
         {
+           //debughoz
+           int r  = hajok[i].getHajo().length;
             for (int j=0;j<hajok[i].getHajo().length;j++)
 
                 if (hajok[i].getHajo()[j].getX()==x&&hajok[i].getHajo()[j].getY()==y) {
@@ -63,11 +71,13 @@ public class Hajok {
         {
             Hajo H = new Hajo(x,y,hajohossz,irany);
         }
-
+        else
+        {HajoLetrehoz(hajohossz);}
 
     }
     private boolean Tablabaesik(Pozicio pozicio,int hajohossz, int irany)
     {
+
         boolean esik=false;
         if (irany==0)
         {

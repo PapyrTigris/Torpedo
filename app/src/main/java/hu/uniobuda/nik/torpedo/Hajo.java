@@ -19,6 +19,10 @@ public class Hajo {
         if (elet ==0){return true;}else {return false;}
     }
 
+    public Hajo()
+    {
+        // hajo.length=0;
+    }
 
 
     public Hajo(int x, int y, int hajohossz, int irany)

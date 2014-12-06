@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-
+import android.widget.Toast;
 
 
 public class Tabla_kirajzol extends BaseAdapter {
@@ -19,13 +19,15 @@ public class Tabla_kirajzol extends BaseAdapter {
     Button[] gombok ;
     int db;
     View.OnClickListener OCL;
-    Hajok hajok;
+   //Hajok hajok;
+    char[][] tabla;
 
     public Tabla_kirajzol(final Context mContext) {
         this.mContext = mContext;
         db = Solo_Multy_Activity.sor * Solo_Multy_Activity.oszlop;
         gombok = new Button[Solo_Multy_Activity.oszlop*Solo_Multy_Activity.sor];
-        hajok = new Hajok();
+        Tablafeltolt();
+        //hajok = new Hajok();
         //alapkockak = new Integer[db];
 
 
@@ -36,18 +38,38 @@ public class Tabla_kirajzol extends BaseAdapter {
             @Override
             public void onClick(View view) {
                //Lőhetsz
-                int i = view.getId();
+                int id = view.getId();
+                int y = id/Solo_Multy_Activity.sor;
+                int x = id%Solo_Multy_Activity.oszlop;
                 //alapkockak[i] = R.drawable.viz;
                // view.
-                if (true){
-                gombok[i].setText("X");}
-                gombok[i].setEnabled(false);
+                if (tabla[x][y] == 'X'){
+                gombok[id].setText("X");}
+                gombok[id].setEnabled(false);
 
                 //mContext.startActivity(new Intent());
                 view.invalidate();
 
             }
         };
+    }
+    private void Tablafeltolt()
+    {
+        tabla = new char[Solo_Multy_Activity.oszlop][Solo_Multy_Activity.sor];
+        for(int i = 0;i<Solo_Multy_Activity.oszlop; i++)
+        {
+            for (int j = 0;j<Solo_Multy_Activity.sor;j++)
+            {
+                tabla[i][j] = ' ';
+            }
+        }
+        tabla[1][1] = 'X';
+        tabla[2][1] = 'X';
+        tabla[3][1] = 'X';
+
+        tabla[2][5] = 'X';
+        tabla[2][6] = 'X';
+        tabla[2][7] = 'X';
     }
 
     @Override
