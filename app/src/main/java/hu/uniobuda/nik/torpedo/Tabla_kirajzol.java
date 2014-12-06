@@ -18,15 +18,18 @@ public class Tabla_kirajzol extends BaseAdapter {
     Context mContext;
     Button[] gombok ;
     int db;
+    int elet=6;
     View.OnClickListener OCL;
    //Hajok hajok;
     char[][] tabla;
+
 
     public Tabla_kirajzol(final Context mContext) {
         this.mContext = mContext;
         db = Solo_Multy_Activity.sor * Solo_Multy_Activity.oszlop;
         gombok = new Button[Solo_Multy_Activity.oszlop*Solo_Multy_Activity.sor];
         Tablafeltolt();
+
         //hajok = new Hajok();
         //alapkockak = new Integer[db];
 
@@ -38,13 +41,21 @@ public class Tabla_kirajzol extends BaseAdapter {
             @Override
             public void onClick(View view) {
                //Lőhetsz
+               //
                 int id = view.getId();
                 int y = id/Solo_Multy_Activity.sor;
                 int x = id%Solo_Multy_Activity.oszlop;
                 //alapkockak[i] = R.drawable.viz;
                // view.
                 if (tabla[x][y] == 'X'){
-                gombok[id].setText("X");}
+                gombok[id].setText("X");
+                elet--;
+                if (elet ==0){
+
+                    Toast.makeText(mContext,"Nyertél",Toast.LENGTH_LONG).show();
+                    
+                }
+                }
                 gombok[id].setEnabled(false);
 
                 //mContext.startActivity(new Intent());
