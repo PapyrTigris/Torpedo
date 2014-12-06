@@ -19,13 +19,13 @@ public class Tabla_kirajzol extends BaseAdapter {
     Button[] gombok ;
     int db;
     View.OnClickListener OCL;
-    Tabla_adatok ta;
+    Hajok hajok;
 
     public Tabla_kirajzol(final Context mContext) {
         this.mContext = mContext;
         db = Solo_Multy_Activity.sor * Solo_Multy_Activity.oszlop;
         gombok = new Button[Solo_Multy_Activity.oszlop*Solo_Multy_Activity.sor];
-        ta = new Tabla_adatok(Solo_Multy_Activity.sor,Solo_Multy_Activity.oszlop);
+        hajok = new Hajok();
         //alapkockak = new Integer[db];
 
 
@@ -37,11 +37,9 @@ public class Tabla_kirajzol extends BaseAdapter {
             public void onClick(View view) {
                //Lőhetsz
                 int i = view.getId();
-                int x= i/Solo_Multy_Activity.oszlop;
-                int y= i/Solo_Multy_Activity.sor;
                 //alapkockak[i] = R.drawable.viz;
                // view.
-                if (ta.Talalt(x,y)){
+                if (true){
                 gombok[i].setText("X");}
                 gombok[i].setEnabled(false);
 

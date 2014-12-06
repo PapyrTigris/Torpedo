@@ -10,7 +10,7 @@ public class Hajo {
     private Pozicio[] hajo;
     Random R;
     int elet;
-    int irany;
+
     // 0-ha vízszintes, 1 ha függőleges
 
     public boolean TalaltSullyedt()
@@ -20,12 +20,22 @@ public class Hajo {
     }
 
 
-    public void Hajo(int x, int y, int hajohossz)
+
+    public Hajo(int x, int y, int hajohossz, int irany)
     {
         elet = hajohossz;
         hajo = new Pozicio[hajohossz];
+        if(irany == 1){
         for(int i = 0;i<hajohossz;i++){
-
+         hajo[i].setY(y+i);
+         hajo[i].setX(x);
+        }
+        }else
+        {
+            for(int i = 0;i<hajohossz;i++){
+                hajo[i].setY(y);
+                hajo[i].setX(x+i);
+            }
 
         }
     }

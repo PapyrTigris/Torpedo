@@ -12,10 +12,18 @@ public class Hajok {
 
 
     public Hajok() {
-
-
+        HajoLetrehoz(5);
+        HajoLetrehoz(3);
+        HajoLetrehoz(2);
+        HajoLetrehoz(2);
     }
 
+    public void Loves(int xy)
+    {
+      int  x=xy/Solo_Multy_Activity.oszlop;
+      int  y=xy%Solo_Multy_Activity.oszlop;
+        Loves(x,y);
+    }
 
     public void Loves(int x, int y)
     {
@@ -45,11 +53,16 @@ public class Hajok {
 
     public void HajoLetrehoz(int hajohossz)
     {
-        int irany =R.nextInt(1);
+        int irany;
         int x = R.nextInt(Solo_Multy_Activity.oszlop);
         int y = R.nextInt(Solo_Multy_Activity.sor);
         irany = R.nextInt(1);
         Pozicio pozicio= new Pozicio(x,y);
+
+        if(Tablabaesik(pozicio,hajohossz,irany)&&Nincshajokozel(pozicio,irany,hajohossz))
+        {
+            Hajo H = new Hajo(x,y,hajohossz,irany);
+        }
 
 
     }
