@@ -8,9 +8,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import java.util.Objects;
 
 
 public class Tabla extends BaseAdapter {
@@ -33,7 +37,7 @@ public class Tabla extends BaseAdapter {
                //Lőhetsz
                 int i = view.getId();
                 alapkockak[i] = R.drawable.viz;
-
+                view.invalidate();
             }
         };
     }
@@ -53,14 +57,15 @@ public class Tabla extends BaseAdapter {
         return 0;
     }
 
+
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ImageView imageView = new ImageView(mContext);
-        imageView.setImageResource(alapkockak[i]);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new GridView.LayoutParams(70, 70));
-        imageView.setId(i);
-        imageView.setOnClickListener(OCL);
-        return imageView;
+
+        Button B = new Button(mContext);
+        B.setId(i);
+        B.setLayoutParams(new GridView.LayoutParams(70,70));
+        B.setOnClickListener(OCL);
+        return B;
     }
 }
