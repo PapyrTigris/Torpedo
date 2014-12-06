@@ -15,7 +15,7 @@ public class multi_play extends ActionBarActivity {
         setContentView(R.layout.gv_tabla);
 
         GridView GV = (GridView) findViewById(R.id.gv_tabla);
-        GV.setAdapter(new Tabla(this));
+        GV.setAdapter(new Tabla_kirajzol(this));
 
     }
 

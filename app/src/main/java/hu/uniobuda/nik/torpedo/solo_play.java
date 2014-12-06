@@ -17,7 +17,7 @@ public class solo_play extends ActionBarActivity {
 
         GridView GV = (GridView) findViewById(R.id.gv_tabla);
        // GV.setColumnWidth(GV.getWidth() / Solo_Multy_Activity.oszlop);
-        GV.setAdapter(new Tabla(this));
+        GV.setAdapter(new Tabla_kirajzol(this));
 
     }
 

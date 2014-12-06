@@ -14,7 +14,7 @@ public class Tabla_adatok {
     int sor = 10;
     int oszlop = 10;
     Random R;
-    char[][] table;
+    private char[][] table;
 
 
 
@@ -22,6 +22,7 @@ public class Tabla_adatok {
     public Tabla_adatok(int sor, int oszlop) {
         this.sor = sor;
         this.oszlop = oszlop;
+        init();
     }
 
     public Tabla_adatok() {
@@ -31,23 +32,27 @@ public class Tabla_adatok {
     //
     private void init() {
 
-        table = new char[sor][oszlop];
+        setTable(new char[sor][oszlop]);
         for (int i = 0; i < sor; i++) {
             for (int j = 0; j < sor; j++) {
-                table[i][j] = ' ';
+                getTable()[i][j] = ' ';
             }
         }
     }
 
+
+
+    public boolean Talalt(int x, int y) {
+        if (getTable()[x][y] == 'X')
+                 {return true;}
+            else {return false;}
+    }
+
+
+    /*
     public void Melle(int x, int y) {
-        table[x][y] = 'O';
+        getTable()[x][y] = 'O';
     }
-
-    public void Talalt(int x, int y) {
-        table[x][y] = 'X';
-    }
-
-
     public void Sullyedt(int x, int y, char irany) {
         //lekezelni a széleket
 
@@ -82,22 +87,22 @@ public class Tabla_adatok {
         }
         //Vissza is meg kell csinálni mert lehet h a közepénél süllyeztettek
     }
-    public void Korbelo(int x, int y)
+    private void Korbelo(int x, int y)
     {
             //  pályaszél
             try {
-                if (table[x++][y]==' '){Melle(x,y);};
-                if (table[x--][y]==' '){Melle(x,y);};
-                if (table[x][y++]==' '){Melle(x,y);};
-                if (table[x][y--]==' '){Melle(x,y);};
+                if (getTable()[x++][y]==' '){Melle(x,y);};
+                if (getTable()[x--][y]==' '){Melle(x,y);};
+                if (getTable()[x][y++]==' '){Melle(x,y);};
+                if (getTable()[x][y--]==' '){Melle(x,y);};
             }catch (IndexOutOfBoundsException e)
             {
 
             }
     }
-
+*/
     private boolean Loves_talalt(int x, int y) {
-        if (table[x][y] == 'X') return true;
+        if (getTable()[x][y] == 'X') return true;
         else return false;
     }
     private void Hajohozzaad(int Hajohossz)
@@ -111,12 +116,12 @@ public class Tabla_adatok {
             if (irany == 'v') {
             for (int i=1;i<Hajohossz;i++) {
 
-                    table[Rsor][Roszlop+i] = 'X';
+                    getTable()[Rsor][Roszlop+i] = 'X';
                 }
             }else{
             for (int i=1;i<Hajohossz;i++) {
 
-                table[Rsor+i][Roszlop] = 'X';
+                getTable()[Rsor+i][Roszlop] = 'X';
             }
         }
         }
@@ -129,31 +134,33 @@ public class Tabla_adatok {
                 for (int i = 0; i < hossz + 2; i++) {
                     try {
 
-                        if (table[x - 1 + i][y - 1] == 'X') {
+                        if (getTable()[x - 1 + i][y - 1] == 'X') {
                             ter = false;
                         }
-                        if (table[x - 1 + i][y] == 'X') {
+                        if (getTable()[x - 1 + i][y] == 'X') {
                             ter = false;
                         }
-                        if (table[x - 1 + i][y + 1] == 'X') {
+                        if (getTable()[x - 1 + i][y + 1] == 'X') {
                             ter = false;
                         }
                     } catch (IndexOutOfBoundsException e) {
+                        return false;
                     }
                 }
             } else {
                 for (int i = 0; i < hossz + 2; i++) {
                     try {
-                        if (table[x - 1][y - 1 + i] == 'X') {
+                        if (getTable()[x - 1][y - 1 + i] == 'X') {
                             ter = false;
                         }
-                        if (table[x][y - 1 + i] == 'X') {
+                        if (getTable()[x][y - 1 + i] == 'X') {
                             ter = false;
                         }
-                        if (table[x + 1][y - 1 + i] == 'X') {
+                        if (getTable()[x + 1][y - 1 + i] == 'X') {
                             ter = false;
                         }
                     } catch (IndexOutOfBoundsException e) {
+                        return false;
                     }
                 }
 
@@ -162,4 +169,11 @@ public class Tabla_adatok {
         return ter;
     }
 
+    public char[][] getTable() {
+        return table;
+    }
+
+    public void setTable(char[][] table) {
+        this.table = table;
+    }
 }

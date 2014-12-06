@@ -23,7 +23,7 @@
             android:name=".multi_play"
             android:label="@string/title_activity_multi_play"></activity>
         <activity
-            android:name=".Tabla"
+            android:name=".Tabla_kirajzol"
             android:label="@string/title_activity_tabla"></activity>
     </application>
 

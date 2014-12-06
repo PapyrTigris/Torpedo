@@ -13,17 +13,19 @@ import android.widget.GridView;
 
 
 
-public class Tabla extends BaseAdapter {
+public class Tabla_kirajzol extends BaseAdapter {
 
     Context mContext;
     Button[] gombok ;
     int db;
     View.OnClickListener OCL;
+    Tabla_adatok ta;
 
-    public Tabla(final Context mContext) {
+    public Tabla_kirajzol(final Context mContext) {
         this.mContext = mContext;
         db = Solo_Multy_Activity.sor * Solo_Multy_Activity.oszlop;
         gombok = new Button[Solo_Multy_Activity.oszlop*Solo_Multy_Activity.sor];
+        ta = new Tabla_adatok(Solo_Multy_Activity.sor,Solo_Multy_Activity.oszlop);
         //alapkockak = new Integer[db];
 
 
@@ -35,9 +37,12 @@ public class Tabla extends BaseAdapter {
             public void onClick(View view) {
                //Lőhetsz
                 int i = view.getId();
+                int x= i/Solo_Multy_Activity.oszlop;
+                int y= i/Solo_Multy_Activity.sor;
                 //alapkockak[i] = R.drawable.viz;
                // view.
-                gombok[i].setText("X");
+                if (ta.Talalt(x,y)){
+                gombok[i].setText("X");}
                 gombok[i].setEnabled(false);
 
                 //mContext.startActivity(new Intent());
@@ -71,8 +76,8 @@ public class Tabla extends BaseAdapter {
         B.setId(i);
         B.setLayoutParams(new GridView.LayoutParams(70, 70));
         B.setOnClickListener(OCL);
-      //  B.setTextAlignment(View.TEXT_ALIGNMENT_CENTER); Nem engedélyezett a 2.3 miatt
-        
+        //  B.setTextAlignment(View.TEXT_ALIGNMENT_CENTER); Nem engedélyezett a 2.3 miatt
+
         gombok[i]= B;
         return B;
     }
